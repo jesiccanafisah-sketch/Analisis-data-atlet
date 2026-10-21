@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisis Data Atlet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="label">SPORT PERFORMANCE DASHBOARD</p>
+    <h1>Analisis Data Atlet</h1>
+    <p>Kelola dan analisis hasil tes fisik atlet.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Input Data Atlet</h2>
+
+      <form id="formAtlet">
+        <label for="nama">Nama Atlet</label>
+        <input id="nama" type="text" placeholder="Nama atlet" required>
+
+        <label for="cabor">Cabang Olahraga</label>
+        <select id="cabor" required>
+          <option value="">Pilih cabang olahraga</option>
+          <option>Karate</option>
+          <option>Basket</option>
+          <option>Renang</option>
+          <option>Atletik</option>
+          <option>Lainnya</option>
+        </select>
+
+        <label for="sprint">Sprint 20 meter (detik)</label>
+        <input id="sprint" type="number" min="0.01" step="0.01" required>
+
+        <label for="agility">Tes Kelincahan (detik)</label>
+        <input id="agility" type="number" min="0.01" step="0.01" required>
+
+        <label for="lompat">Vertical Jump (cm)</label>
+        <input id="lompat" type="number" min="0" step="0.1" required>
+
+        <button type="submit">Tambah Atlet</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Data Atlet</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Cabor</th>
+              <th>Sprint</th>
+              <th>Kelincahan</th>
+              <th>Jump</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabelAtlet"></tbody>
+        </table>
+      </div>
+      <p id="pesanKosong">Belum ada data atlet.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Ringkasan Analisis</h2>
+      <div id="ringkasan" class="summary-grid">
+        <p>Masukkan data atlet untuk memulai analisis.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Grafik Perbandingan Atlet</h2>
+      <p>Perbandingan tinggi vertical jump setiap atlet.</p>
+      <div class="chart-container">
+        <canvas id="grafikAtlet"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Analisis Data Atlet | Proyek Data Raya</p>
+  </footer>
+
+  <!-- Library grafik Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
